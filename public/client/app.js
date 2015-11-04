@@ -14,13 +14,11 @@ window.Shortly = Backbone.View.extend({
     this.router.on('route', this.updateNav, this);
 
     Backbone.history.start({ pushState: true });
-    this.renderLoginView();
   },
 
   render: function(){
     this.$el.html( this.template() );
     return this;
-
   },
 
   renderIndexView: function(e){
@@ -31,11 +29,6 @@ window.Shortly = Backbone.View.extend({
   renderCreateView: function(e){
     e && e.preventDefault();
     this.router.navigate('/create', { trigger: true });
-  },
-
-  renderLoginView: function(e){
-    e && e.preventDefault();
-    this.router.navigate('/login', { trigger: true });
   },
 
   updateNav: function(routeName){
